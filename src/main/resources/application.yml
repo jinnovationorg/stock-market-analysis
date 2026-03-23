@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: spring-ai-gemini-webflux
+  ai:
+    model:
+      chat: google-genai
+    google:
+      genai:
+        api-key: ${GOOGLE_API_KEY:your-google-api-key}
+        chat:
+          options:
+            model: ${GEMINI_MODEL:gemini-2.0-flash}
+            temperature: ${GEMINI_TEMPERATURE:0.4}
+    mcp:
+      client:
+        enabled: ${MCP_YAHOO_ENABLED:false}
+        initialized: true
+        request-timeout: 20s
+        stdio:
+          connections:
+            yahoo-finance:
+              command: ${MCP_YAHOO_COMMAND:uvx}
+              args:
+                - ${MCP_YAHOO_PACKAGE:mcp-yahoo-finance}
+
+server:
+  port: 8080
