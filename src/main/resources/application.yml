@@ -13,7 +13,7 @@ spring:
             temperature: ${GEMINI_TEMPERATURE:0.4}
     mcp:
       client:
-        enabled: ${MCP_YAHOO_ENABLED:false}
+        enabled: ${MCP_YAHOO_ENABLED:true}
         initialized: true
         request-timeout: 20s
         stdio:
