@@ -5,7 +5,7 @@ This project is a Spring Boot WebFlux application that uses Spring AI with the G
 It includes two simple agents:
 
 - `Research Agent`: gathers notes for the user request and can use Yahoo Finance MCP tools when enabled.
-- `Writer Agent`: turns those notes into a cleaner final response.
+- `Signal Agent`: turns those notes into a final BUY/SELL-style signal response.
 
 ## Requirements
 
@@ -68,7 +68,7 @@ The app also includes a browser UI at:
 - `Run with POST`: runs workflow via `POST /api/agents/run`.
 - `Clear Output`: clears current research/signal output areas.
 - `Research Agent Output`: raw/structured research collected by the research agent.
-- `Signal Agent Output`: final recommendation text from the signal/writer agent.
+- `Signal Agent Output`: final recommendation text from the signal agent.
 - `MCP Tools In Use`: loaded MCP tools from `GET /api/agents/mcp/tools`.
 
 ### Indian Market Analysis Tab
@@ -84,6 +84,6 @@ The app also includes a browser UI at:
 ## Notes
 
 - The app uses one Gemini model with two different `ChatClient` personas.
-- The endpoint returns both the research output and the writer output so you can see the two-agent workflow.
+- The endpoint returns both the research output and the signal output so you can see the two-agent workflow.
 - It does not use Vertex AI. It uses the Google Gemini Developer API through Spring AI's Google GenAI starter.
 - Yahoo Finance MCP is optional and is connected through Spring AI's MCP client starter.
