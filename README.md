@@ -44,7 +44,7 @@ gradle bootRun
 GET request:
 
 ```bash
-curl "http://localhost:8080/api/agents/run?task=Compare Apple and Microsoft using current stock and company data"
+curl "http://localhost:8080/api/agents/run?task=HAL india"
 ```
 
 POST request:
@@ -54,6 +54,32 @@ curl -X POST "http://localhost:8080/api/agents/run" \
   -H "Content-Type: application/json" \
   -d '{"task":"Summarize Tesla stock context and turn it into an investor-friendly brief"}'
 ```
+
+## UI Documentation
+
+The app also includes a browser UI at:
+
+`http://localhost:8080`
+
+### Workflow Tab (Stock Signal Workflow)
+
+- `stock to analyze`: input box for the stock prompt/task.
+- `Run with GET`: runs workflow via `GET /api/agents/run?task=...`.
+- `Run with POST`: runs workflow via `POST /api/agents/run`.
+- `Clear Output`: clears current research/signal output areas.
+- `Research Agent Output`: raw/structured research collected by the research agent.
+- `Signal Agent Output`: final recommendation text from the signal/writer agent.
+- `MCP Tools In Use`: loaded MCP tools from `GET /api/agents/mcp/tools`.
+
+### Indian Market Analysis Tab
+
+- `Analyze Indian Market`: runs `GET /api/agents/india/analysis`.
+- `India Research Output`: market-wide research context.
+- `Top 5 Buy Recommendations`: final list of suggested stocks.
+
+### UI Screenshot
+
+![HAL analysis UI](HAL_analysis.png)
 
 ## Notes
 

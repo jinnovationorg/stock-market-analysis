@@ -45,15 +45,15 @@ function safeStringify(value) {
 }
 
 function clearOutputs() {
-    researchOutput.textContent = "";
-    signalOutput.textContent = "";
+    researchOutput.textContent = "(Run workflow to view research output.)";
+    signalOutput.textContent = "(Run workflow to view signal output.)";
     setRunStatus("Output cleared.");
 }
 
 async function runWorkflow(method) {
     const task = taskInput.value.trim();
     if (!task) {
-        setRunStatus("Task is required.", true);
+        setRunStatus("stock to analyze is required.", true);
         return;
     }
 

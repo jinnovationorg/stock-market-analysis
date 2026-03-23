@@ -25,10 +25,10 @@
     </section>
 
     <section id="workflowTab" class="tab-panel active">
-        <section class="panel">
+        <section class="panel run-window">
             <h2>Run Workflow</h2>
-            <label for="task">Stock Task</label>
-            <textarea id="task" rows="4">Compare Apple and Microsoft using current stock and company data and return a trading signal.</textarea>
+            <label for="task">stock to analyze</label>
+            <textarea id="task" rows="4">HAL india</textarea>
             <div class="actions">
                 <button id="runGetBtn" class="btn btn-primary" type="button">Run with GET</button>
                 <button id="runPostBtn" class="btn btn-secondary" type="button">Run with POST</button>
@@ -38,13 +38,19 @@
         </section>
 
         <section class="grid">
-            <article class="panel">
-                <h2>Research Agent Output</h2>
-                <pre id="researchOutput" class="output"></pre>
+            <article class="panel output-panel">
+                <div class="panel-title-row">
+                    <h2>Research Agent Output</h2>
+                    <span class="pill">Agent 1</span>
+                </div>
+                <pre id="researchOutput" class="output" aria-label="Research Agent Output">(Run workflow to view research output.)</pre>
             </article>
-            <article class="panel">
-                <h2>Signal Agent Output</h2>
-                <pre id="signalOutput" class="output"></pre>
+            <article class="panel output-panel">
+                <div class="panel-title-row">
+                    <h2>Signal Agent Output</h2>
+                    <span class="pill">Agent 2</span>
+                </div>
+                <pre id="signalOutput" class="output" aria-label="Signal Agent Output">(Run workflow to view signal output.)</pre>
             </article>
         </section>
 
