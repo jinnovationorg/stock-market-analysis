@@ -6,7 +6,7 @@ spring:
       chat: google-genai
     google:
       genai:
-        api-key: ${GOOGLE_API_KEY:AIzaSyCUFoItYC5AfaO1ZpCXPh6FraezT-WarME}
+        api-key: ${GOOGLE_API_KEY:GOOGLE_API_KEY}
         chat:
           options:
             model: ${GEMINI_MODEL:gemini-3.1-flash-lite-preview}
