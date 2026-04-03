@@ -22,6 +22,9 @@
     <section class="tabs panel">
         <button id="tabWorkflow" class="tab-btn active" type="button" data-tab="workflowTab">Stock Signal Workflow</button>
         <button id="tabIndia" class="tab-btn" type="button" data-tab="indiaTab">Indian Market Analysis</button>
+        <button id="tabIntraday" class="tab-btn" type="button" data-tab="intradayTab">Intraday Analysis</button>
+        <button id="tabMacro" class="tab-btn" type="button" data-tab="macroTab">Macro 4-Agent Workflow</button>
+        <button id="tabSingleStock" class="tab-btn" type="button" data-tab="singleStockTab">Single Stock 4-Agent</button>
     </section>
 
     <section id="workflowTab" class="tab-panel active">
@@ -70,17 +73,159 @@
                 <h2>Indian Market Analysis</h2>
                 <button id="indiaAnalysisBtn" class="btn btn-primary" type="button">Analyze Indian Market</button>
             </div>
-            <p id="indiaStatus" class="status">Click the button to generate an India market overview and 5 buy ideas.</p>
-            <div class="grid">
-                <article>
-                    <h2>India Research Output</h2>
-                    <pre id="indiaResearchOutput" class="output"></pre>
+            <p id="indiaStatus" class="status">Click the button to generate an India market overview and Nifty 20 recommendations.</p>
+            <div class="grid intraday-grid">
+                <article class="intraday-panel">
+                    <div class="panel-title-row">
+                        <h2>India Research Output</h2>
+                        <span class="pill">Agent 1</span>
+                    </div>
+                    <div id="indiaResearchOutput" class="intraday-dashboard intraday-research-dashboard" aria-live="polite">
+                        <div class="intraday-empty">Run Indian market analysis to view formatted research.</div>
+                    </div>
                 </article>
-                <article>
-                    <h2>Top 5 Buy Recommendations</h2>
-                    <pre id="indiaRecommendationsOutput" class="output"></pre>
+                <article class="intraday-panel">
+                    <div class="panel-title-row">
+                        <h2>Top Nifty 20 Recommendations</h2>
+                        <span class="pill">Live Readout</span>
+                    </div>
+                    <div id="indiaRecommendationsOutput" class="intraday-dashboard" aria-live="polite">
+                        <div class="intraday-empty">Run Indian market analysis to view formatted Nifty 20 recommendations.</div>
+                    </div>
                 </article>
             </div>
+        </section>
+    </section>
+
+    <section id="intradayTab" class="tab-panel">
+        <section class="panel">
+            <div class="panel-title-row">
+                <h2>Intraday Market Analysis</h2>
+                <button id="intradayAnalysisBtn" class="btn btn-primary" type="button">Analyze Intraday Setup</button>
+            </div>
+            <p id="intradayStatus" class="status">Click the button to generate an intraday market view and 5 trade ideas.</p>
+            <div class="grid intraday-grid">
+                <article class="intraday-panel">
+                    <div class="panel-title-row">
+                        <h2>Intraday Research Output</h2>
+                        <span class="pill">Agent 1</span>
+                    </div>
+                    <div id="intradayResearchOutput" class="intraday-dashboard intraday-research-dashboard" aria-live="polite">
+                        <div class="intraday-empty">Run intraday analysis to view formatted market research.</div>
+                    </div>
+                </article>
+                <article class="intraday-panel">
+                    <div class="panel-title-row">
+                        <h2>Top 5 Intraday Ideas</h2>
+                        <span class="pill">Live Readout</span>
+                    </div>
+                    <div id="intradayRecommendationsOutput" class="intraday-dashboard" aria-live="polite">
+                        <div class="intraday-empty">Run intraday analysis to view formatted signals, deltas, and trade ideas.</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </section>
+
+    <section id="macroTab" class="tab-panel">
+        <section class="panel run-window">
+            <h2>Global Macro 4-Agent Workflow</h2>
+            <label for="macroTask">analysis focus (optional)</label>
+            <textarea id="macroTask" rows="4">Focus more on Indian markets (NSE/BSE) and India's position in global supply chains, China+1 strategy, and policies like PLI, infra, and defense.</textarea>
+            <div class="actions">
+                <button id="macroRunBtn" class="btn btn-primary" type="button">Run 4-Agent Workflow</button>
+            </div>
+            <p id="macroStatus" class="status">Ready to run Macro Scanner, Sector Mapper, Stock Screener, and Risk Evaluator.</p>
+        </section>
+
+        <section class="grid intraday-grid">
+            <article class="intraday-panel">
+                <div class="panel-title-row">
+                    <h2>Agent 1: Macro Scanner</h2>
+                    <span class="pill">Agent 1</span>
+                </div>
+                <div id="macroScannerOutput" class="intraday-dashboard intraday-research-dashboard" aria-live="polite">
+                    <div class="intraday-empty">Run workflow to view output.</div>
+                </div>
+            </article>
+            <article class="intraday-panel">
+                <div class="panel-title-row">
+                    <h2>Agent 2: Sector Mapper</h2>
+                    <span class="pill">Agent 2</span>
+                </div>
+                <div id="sectorMapperOutput" class="intraday-dashboard intraday-research-dashboard" aria-live="polite">
+                    <div class="intraday-empty">Run workflow to view output.</div>
+                </div>
+            </article>
+            <article class="intraday-panel">
+                <div class="panel-title-row">
+                    <h2>Agent 3: Stock Screener</h2>
+                    <span class="pill">Agent 3</span>
+                </div>
+                <div id="stockScreenerOutput" class="intraday-dashboard intraday-research-dashboard" aria-live="polite">
+                    <div class="intraday-empty">Run workflow to view output.</div>
+                </div>
+            </article>
+            <article class="intraday-panel">
+                <div class="panel-title-row">
+                    <h2>Agent 4: Risk Evaluator</h2>
+                    <span class="pill">Agent 4</span>
+                </div>
+                <div id="riskEvaluatorOutput" class="intraday-dashboard intraday-research-dashboard" aria-live="polite">
+                    <div class="intraday-empty">Run workflow to view output.</div>
+                </div>
+            </article>
+        </section>
+    </section>
+
+    <section id="singleStockTab" class="tab-panel">
+        <section class="panel run-window">
+            <h2>Single Stock 4-Agent Workflow</h2>
+            <label for="singleStockTask">stock to analyze (single stock only)</label>
+            <textarea id="singleStockTask" rows="3">RELIANCE.NS</textarea>
+            <div class="actions">
+                <button id="singleStockRunBtn" class="btn btn-primary" type="button">Run Single Stock Workflow</button>
+            </div>
+            <p id="singleStockStatus" class="status">Ready to run 4-agent analysis for one stock.</p>
+        </section>
+
+        <section class="grid intraday-grid">
+            <article class="intraday-panel">
+                <div class="panel-title-row">
+                    <h2>Agent 1: Macro Scanner</h2>
+                    <span class="pill">Agent 1</span>
+                </div>
+                <div id="singleStockMacroScannerOutput" class="intraday-dashboard intraday-research-dashboard" aria-live="polite">
+                    <div class="intraday-empty">Run workflow to view output.</div>
+                </div>
+            </article>
+            <article class="intraday-panel">
+                <div class="panel-title-row">
+                    <h2>Agent 2: Sector Mapper</h2>
+                    <span class="pill">Agent 2</span>
+                </div>
+                <div id="singleStockSectorMapperOutput" class="intraday-dashboard intraday-research-dashboard" aria-live="polite">
+                    <div class="intraday-empty">Run workflow to view output.</div>
+                </div>
+            </article>
+            <article class="intraday-panel">
+                <div class="panel-title-row">
+                    <h2>Agent 3: Stock Screener</h2>
+                    <span class="pill">Agent 3</span>
+                </div>
+                <div id="singleStockStockScreenerOutput" class="intraday-dashboard intraday-research-dashboard" aria-live="polite">
+                    <div class="intraday-empty">Run workflow to view output.</div>
+                </div>
+            </article>
+            <article class="intraday-panel">
+                <div class="panel-title-row">
+                    <h2>Agent 4: Risk Evaluator</h2>
+                    <span class="pill">Agent 4</span>
+                </div>
+                <div id="singleStockRiskEvaluatorOutput" class="intraday-dashboard intraday-research-dashboard" aria-live="polite">
+                    <div class="intraday-empty">Run workflow to view output.</div>
+                </div>
+            </article>
         </section>
     </section>
 </main>
